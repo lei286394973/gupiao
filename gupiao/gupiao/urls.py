@@ -1,3 +1,4 @@
+#coding: utf-8
 """gupiao URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -14,8 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
-from django.contrib import admin
+# from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    # url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^$', 'article.views.home'),
+    url(r'^type/(?P<article_type>\w+)$', 'article.views.article_list'),
+    url(r'^article/(?P<article_id>\d+)$', 'article.views.article_detail'),
+    url(r'^.+$', 'article.views.article_old_news'),
 ]
+

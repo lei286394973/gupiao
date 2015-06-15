@@ -1,0 +1,41 @@
+{% extends "article/base_article.html" %}
+{% load custom_tags %}
+{% load custom_filters %}
+
+{% block css %}
+<style type="text/css">
+.list-group-item:first-child{
+	border-top-left-radius: 0;
+  	border-top-right-radius: 0;
+}
+.list-group-item:last-child{
+	border-bottom-right-radius: 0;
+  	border-bottom-left-radius: 0;
+}
+</style>
+{% endblock %}
+
+{% block container %}
+<ol class="breadcrumb" style="margin-bottom: 10px; margin-top: 0px; padding-left: 0; padding-top: 0;">
+    <li><a href="/">首页</a></li>
+    <li><a href="/type/{{article_type}}">{{article_type_dis}}</a></li>
+</ol>
+<div class="col-md-8" style="padding: 0 0 20px 0;">
+<ul class="list-group">
+	{% for x in articles %}
+	<li class="list-group-item">
+		<div>
+			<a href="{{x.get_url}}" class="f16 fb">{{x.title}}</a>
+			<span class="pull-right co3">{{x.get_date}}</span>
+		</div>
+		<div class="pt-10 co3">
+			{{x.get_info}}
+		</div>
+	</li>
+	{% endfor %}
+</ul>
+
+{{page_params|paging:request}}
+</div>
+
+{% endblock container %}

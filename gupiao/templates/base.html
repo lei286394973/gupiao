@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}重庆股票开户网-重庆炒股开户-重庆股票低佣金-重庆证券开户{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="renderer" content="webkit" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+        <meta name="keywords" content="{% block keywords %}重庆股票开户,重庆炒股开户,重庆股票低佣金,重庆证券开户,重庆股票免费开户,重庆股票转户,重庆证券公司,股票开户,炒股开户,网上开户,证券开户,重庆佣金低手续费{% endblock keywords %}" />
+        <meta name="description" content="{% block description %}重庆股票开户免费,股票佣金最低,预约炒股开户咨询电话13677617173，QQ 6055983。证券开户免费，转户费用报销，佣金最低优惠，另据资金量送提货卡，多重好礼相送！{% endblock description %}" />
+        <link rel="shortcut icon" href="{% static 'image/favicon.ico' %}" />
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}" />
+        
+        {% block base_css %}{% endblock %}
+        <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="{% static 'js/html5shiv.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/respond.min.js' %}"></script>
+        <![endif]-->
+        <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    </head>
+
+    <body>
+        {% block header %}{% endblock header %}
+        
+        {% block base_container %}
+        <div class="container" style="min-height:500px; padding-top: 80px;">
+            {% block container %}{% endblock container %}
+        </div>
+        {% endblock base_container%}
+
+        {% block footer %}
+        <div class="container text-center co3 pb-20">
+            <div class="pt-5">重庆股票开户免费，股票低佣金办理及股票转户费用报销，开户后一对一理财服务</div>
+            <div class="pt-5">咨询电话: 18896080461 QQ: 380611077</div>
+            <div class="pt-5">Copyright © 2009 - 2015 eqcj.com. All Rights Reserved.</div>
+        </div>
+        {% endblock footer %}
+
+        <script type="text/javascript" src="{% static 'js/site.js' %}"></script>
+        {% block base_js %}{% endblock %}
+    </body>
+</html>

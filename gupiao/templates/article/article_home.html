@@ -1,0 +1,62 @@
+{% extends "article/base_article.html" %}
+
+{% block css %}
+<style type="text/css">
+.list-group{
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-bottom: 30px;
+}
+.list-group-item:first-child{
+	border-top-left-radius: 0;
+  	border-top-right-radius: 0;
+}
+.list-group-item:last-child{
+	border-bottom-right-radius: 0;
+  	border-bottom-left-radius: 0;
+}
+</style>
+{% endblock %}
+
+{% block container %}
+<div class="row">
+	<ul class="col-md-6 list-group">
+		<li class="list-group-item bgc-588ABE">
+			<span class="co1 f18 fb">老站内容</span>
+			<a class="co1 pull-right" href="/type/0">查看更多 »</a>
+		</li>
+		{% for x in articles_0 %}
+		<li class="list-group-item">
+			<div>
+				<a class="f16" href="{{x.get_url}}">{{x.title}}</a>
+				<span class="pull-right co3">{{x.get_date}}</span>
+			</div>
+			<div class="co3 f14 pt-10">
+				{{x.get_info}}
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+
+
+	<ul class="col-md-6 list-group">
+		<li class="list-group-item bgc-588ABE">
+			<span class="co1 f18 fb">国内财经</span>
+			<a class="co1 pull-right" href="/type/1">查看更多 »</a>
+		</li>
+		{% for x in articles_1 %}
+		<li class="list-group-item">
+			<div>
+				<a class="f16" href="{{x.get_url}}">{{x.title}}</a>
+				<span class="pull-right co3">{{x.get_date}}</span>
+			</div>
+			<div class="co3 f14 pt-10">
+				{{x.get_info}}
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+
+	
+</div>
+{% endblock container %}
