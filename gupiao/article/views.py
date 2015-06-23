@@ -3,7 +3,7 @@ import json, datetime
 
 from django.template import RequestContext
 from django.shortcuts import render, render_to_response, redirect
-from django.http import Http404
+from django.http import Http404, HttpResponsePermanentRedirect
 
 from common import page
 from article.models import Article
@@ -36,10 +36,10 @@ def article_detail(request, article_id=1, template_name='article/article_detail.
 
 def article_old_news(request):
     print request.path
-    obj = Article.objects.filter(from_url=request.path[1:])
+    obj = Article.objects.filter(from_url=request.path)
     if not obj:
         raise Http404
 
     obj = obj[0]
 
-    return redirect('/article/%s' % obj.id)
+    return HttpResponsePermanentRedirect('/article/%s' % obj.id)

@@ -62,7 +62,7 @@ for x in data:
             title = x['title'],
             content = x['content'],
             article_type = 0,
-            from_url = "%s/%s/%s" % (CATEGORYS[x['category_id']], x['id'], x['id']),
+            from_url = "/%s/%s/%s" % (CATEGORYS[x['category_id']], x['id'], x['id']),
             create_time = datetime.date.fromtimestamp(x['time']/1000)
         )
         total += 1
