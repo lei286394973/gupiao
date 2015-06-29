@@ -35,7 +35,7 @@ def article_detail(request, article_id=1, template_name='article/article_detail.
 
 
 def article_old_news(request):
-    print request.path
+    
     obj = Article.objects.filter(from_url=request.path)
     if not obj:
         raise Http404
