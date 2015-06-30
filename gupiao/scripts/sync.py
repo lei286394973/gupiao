@@ -26,7 +26,7 @@ def sync_zskx():
     for x in range(len(tags)):
         # title = tags.eq(x).attr('title').encode('latin1')
         article_url = tags.eq(x).attr('href')
-        article_url = "http://news.cnstock.com/news/sns_bwkx/201506/3475548.htm"
+
         # 获取文章信息
         rep = requests.get(article_url, headers=headers)
         dom = pq(rep.text)
@@ -39,7 +39,6 @@ def sync_zskx():
             imgs.eq(i).attr("src", "http://news.cnstock.com%s" % imgs.eq(i).attr("src"))
 
         content = dom.find('#qmt_content_div').html()
-        print content
         
         try:
             Article.objects.create(
