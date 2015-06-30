@@ -36,17 +36,29 @@ a{
 .bgc-588ABE{
 	background-color: #588ABE;
 }
+.bgc-272829{
+	background-color: #272829;
+}
 
 .co1{color: #ffffff;}
 .co2{color: #588ABE;}
 .co3{color: #9fa3a7;}
+.co4{color: #666666;}
 
+.f12{font-size: 12px;}
 .f14{font-size: 14px;}
 .f16{font-size: 16px;}
 .f18{font-size: 18px;}
+.f20{font-size: 20px;}
 
 .fb{font-weight: bold;}
 
 .pt-5{padding-top: 5px;}
 .pt-10{padding-top: 10px;}
+.pt-50{padding-top: 50px;}
 .pb-20{padding-bottom: 20px;}
+
+.links a{color: #999999;}
+.list-inline>li{
+	padding-bottom: 5px;
+}
