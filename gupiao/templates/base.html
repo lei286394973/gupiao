@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load custom_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
     <head>
@@ -47,16 +48,7 @@
                     <div class="col-md-8">
                         <p class="f20 co4">友情链接</p>
                         <ul class="list-inline pt-10 links">
-                            <li><a href="http://www.zhixuan.com/" target="_blank">智选</a></li> 
-                            <li><a href="http://www.gupiaos.com" target="_blank">成都股票开户</a></li> 
-                            <li><a href="http://www.iguuu.com" target="_blank">爱股网</a></li> 
-                            <li><a href="http://www.xu5188.com" target="_blank">金盾股票园</a></li> 
-                            <li><a href="http://www.eboce.com" target="_blank">渤海商品交易所网上营业厅</a></li> 
-                            <li><a href="http://cq.edai.com" target="_blank">重庆贷款</a></li> 
-                            <li><a href="http://www.guiyinwang.com" target="_blank">粤贵银</a></li> 
-                            <li><a href="http://www.zixinke.com/" target="_blank">资信客</a></li> 
-                            <li><a href="http://www.qnfx.com/" target="_blank">青牛财经</a></li> 
-                            <li><a href="http://www.15ss.cn" target="_blank">15亿网</a></li> 
+                            {% _links %}
                         </ul>
                     </div>
                 </div>

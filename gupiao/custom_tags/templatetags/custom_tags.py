@@ -40,3 +40,20 @@ def hot_activity(context):
     activitys = ActivityBase().get_all_valid_activitys()[:3]
 
     return render_to_response('activity/_hot_activity.html', locals(), context_instance=context).content
+
+@register.simple_tag(takes_context=True)
+def _links(context):
+    """
+    """
+    from article.models import Link
+
+    html = ""
+
+    for link in Link.objects.all():
+        html += '<li><a href="%s" target="_blank">%s</a></li>' % (link.site, link.name)
+   
+    return html
+
+
+
+
